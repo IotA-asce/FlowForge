@@ -40,6 +40,13 @@ figure formatter.
 **Done when:** `uv run pytest` and `uv run mypy` are green in CI; `Quantity(0.4712, u=0.0937)`
 formats as `0.471 ± 0.094`; provenance propagation is unit-tested across all five tags.
 
+**Progress — 17 November 2026:** first M0 subset implemented and locally verified:
+installable Python 3.11+ package, Quantity/provenance leaves and central formatter.
+The documented numeric examples, all five tags, mixed-origin demotion, rounding
+carry, coverage and unresolved/unknown warnings have executable tests. **M0 is
+not complete:** units/errors/logging, import-direction guard and CI remain TODO.
+No simulator, experiment engine, device path or CLI has been implemented yet.
+
 ## M1 — Simulator plant and device protocols
 
 **Build:** `devices/interfaces.py` (the `Protocol` definitions), `devices/sim/` with the plant

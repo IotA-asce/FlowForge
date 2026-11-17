@@ -62,6 +62,35 @@ You mount a printed specimen, write a short YAML file, and run one command. Flow
 airflow, waits for the flow to settle, samples force and flow sensors on a synchronised
 timeline, steps to the next speed, and writes a self-contained run directory.
 
+## Implemented software foundation
+
+The first **M0 subset** is implemented: immutable quantities, the five provenance
+labels, computed-origin propagation, and uncertainty-aware formatting. This is
+not yet the simulator, instrument CLI, acquisition pipeline or hardware control.
+
+```bash
+uv sync --locked --python 3.11
+uv run --locked pytest
+uv run --locked mypy
+uv run --locked ruff check .
+uv run --locked ruff format --check src tests
+```
+
+The documented numeric example is a formatting fixture, not a measured run:
+
+```python
+from flowforge.provenance import Provenance
+from flowforge.quantity import Quantity
+
+print(Quantity(0.4712, 0.0937, "", Provenance.DERIVED))
+# 0.471 ± 0.094 [DERIVED]
+```
+
+See [metrology-primitives.md](docs/metrology-primitives.md) for standard versus
+expanded uncertainty, provenance, and unresolved/unknown warnings. **M0 remains
+partial:** units/errors/logging helpers, import-direction checks and CI are TODO.
+The planned commands below remain unavailable until their later milestones.
+
 ## Planned interface
 
 > The commands below describe the intended V0 interface. They do not run yet.
