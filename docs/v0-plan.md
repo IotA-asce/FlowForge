@@ -47,6 +47,13 @@ carry, coverage and unresolved/unknown warnings have executable tests. **M0 is
 not complete:** units/errors/logging, import-direction guard and CI remain TODO.
 No simulator, experiment engine, device path or CLI has been implemented yet.
 
+**Progress — 18 November 2026:** static import-direction enforcement and a locked
+Python 3.11/3.13 Ubuntu CI workflow are implemented. The guard checks all package
+source, absolute/relative imports and re-exports, unclassified module roots, and
+indirect device dependencies from scientific layers. See
+[software-validation.md](software-validation.md) for limits and commands.
+Units/errors/logging helpers remain TODO, so **M0 is still partial**.
+
 ## M1 — Simulator plant and device protocols
 
 **Build:** `devices/interfaces.py` (the `Protocol` definitions), `devices/sim/` with the plant

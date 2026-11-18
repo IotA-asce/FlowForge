@@ -14,11 +14,12 @@
 ---
 
 > [!IMPORTANT]
-> **This repository is in the design phase. No code has been written yet.**
+> **M0 is partially implemented; this is not yet a working drag bench.**
 >
-> What exists today is the architecture, wire protocol, data format, measurement model,
-> calibration procedures, safety analysis, hardware design, and twelve architecture decision
-> records. Implementation starts at **M0** in [docs/v0-plan.md](docs/v0-plan.md); the first
+> Architecture, wire protocol, data format, measurement model, calibration procedures,
+> safety analysis, hardware design, and twelve architecture decision records guide
+> implementation. The current foundation is described below and tracked under
+> **M0** in [docs/v0-plan.md](docs/v0-plan.md); the first
 > milestone that produces a result is a fully simulated drag sweep, with no hardware involved.
 
 ## Why
@@ -67,6 +68,13 @@ timeline, steps to the next speed, and writes a self-contained run directory.
 The first **M0 subset** is implemented: immutable quantities, the five provenance
 labels, computed-origin propagation, and uncertainty-aware formatting. This is
 not yet the simulator, instrument CLI, acquisition pipeline or hardware control.
+
+Static import-direction checks enforce the documented layers, including indirect
+device dependencies from scientific layers. GitHub Actions runs locked tests,
+strict typing, lint, source/test formatting and package builds on Ubuntu with
+Python 3.11 and 3.13 for pushes and pull requests. See
+[software validation](docs/software-validation.md). Units/errors/logging helpers
+remain TODO; adding CI does not by itself complete M0.
 
 ```bash
 uv sync --locked --python 3.11
