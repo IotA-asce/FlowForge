@@ -54,6 +54,12 @@ indirect device dependencies from scientific layers. See
 [software-validation.md](software-validation.md) for limits and commands.
 Units/errors/logging helpers remain TODO, so **M0 is still partial**.
 
+**Progress — 20 November 2026:** the units leaf now provides explicit mm/metres,
+g/kg, percent/fraction and absolute Celsius/kelvin edge conversions, with finite
+input/output and temperature-domain guards. See [units.md](units.md). Quantity
+units remain labels; numerical uncertainty propagation is not implemented by
+these helpers. **M0 remains partial:** errors/logging are TODO.
+
 ## M1 — Simulator plant and device protocols
 
 **Build:** `devices/interfaces.py` (the `Protocol` definitions), `devices/sim/` with the plant

@@ -49,6 +49,7 @@ examples are not reformatted by this change. Strict mypy covers production sourc
 pytest exercises the architecture guard and its fixtures. Future device/scientific
 implementations need their own behavioral and physical acceptance checks.
 
-This is a further partial M0 delivery. Units/errors/logging helpers remain TODO.
+This is a further partial M0 delivery. Explicit units-edge conversions are covered by reference, round-trip, domain
+and overflow tests. Errors/logging helpers remain TODO.
 Passing checks do not demonstrate calibrated measurements, a simulator, instrument
 CLI, serial control, cross-platform hardware support or the full V0 workflow.

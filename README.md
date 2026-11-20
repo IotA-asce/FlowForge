@@ -73,8 +73,9 @@ Static import-direction checks enforce the documented layers, including indirect
 device dependencies from scientific layers. GitHub Actions runs locked tests,
 strict typing, lint, source/test formatting and package builds on Ubuntu with
 Python 3.11 and 3.13 for pushes and pull requests. See
-[software validation](docs/software-validation.md). Units/errors/logging helpers
-remain TODO; adding CI does not by itself complete M0.
+[software validation](docs/software-validation.md). Explicit config/display conversion helpers are now implemented in
+[units](docs/units.md). Errors/logging helpers remain TODO; checks alone do not
+complete M0.
 
 ```bash
 uv sync --locked --python 3.11
@@ -96,7 +97,9 @@ print(Quantity(0.4712, 0.0937, "", Provenance.DERIVED))
 
 See [metrology-primitives.md](docs/metrology-primitives.md) for standard versus
 expanded uncertainty, provenance, and unresolved/unknown warnings. **M0 remains
-partial:** units/errors/logging helpers, import-direction checks and CI are TODO.
+partial:** errors/logging helpers are TODO. Unit-edge helpers and static
+import-direction checks/CI are implemented; see [units](docs/units.md) and
+[validation](docs/software-validation.md).
 The planned commands below remain unavailable until their later milestones.
 
 ## Planned interface

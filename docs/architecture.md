@@ -1,6 +1,6 @@
 # FlowForge Architecture
 
-**Status:** design; first M0 Quantity/provenance leaves implemented, other layers planned
+**Status:** design; M0 Quantity/provenance and units leaves implemented, other layers planned
 **Scope:** the whole system, with V0 boundaries called out explicitly
 **Audience:** anyone implementing, reviewing, or reproducing FlowForge
 
