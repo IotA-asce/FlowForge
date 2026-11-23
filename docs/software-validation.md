@@ -49,7 +49,9 @@ examples are not reformatted by this change. Strict mypy covers production sourc
 pytest exercises the architecture guard and its fixtures. Future device/scientific
 implementations need their own behavioral and physical acceptance checks.
 
-This is a further partial M0 delivery. Explicit units-edge conversions are covered by reference, round-trip, domain
-and overflow tests. Errors/logging helpers remain TODO.
+The M0 foundation now includes all documented leaves. Explicit units-edge conversions
+are covered by reference, round-trip, domain and overflow tests. Error/logging
+behavior, stream ownership, exception JSON and import isolation are tested; see
+[errors and logging](errors-logging.md). The suite contains 175 tests.
 Passing checks do not demonstrate calibrated measurements, a simulator, instrument
 CLI, serial control, cross-platform hardware support or the full V0 workflow.

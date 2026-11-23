@@ -14,7 +14,7 @@
 ---
 
 > [!IMPORTANT]
-> **M0 is partially implemented; this is not yet a working drag bench.**
+> **M0 foundations are implemented; this is not yet a working drag bench.**
 >
 > Architecture, wire protocol, data format, measurement model, calibration procedures,
 > safety analysis, hardware design, and twelve architecture decision records guide
@@ -65,8 +65,9 @@ timeline, steps to the next speed, and writes a self-contained run directory.
 
 ## Implemented software foundation
 
-The first **M0 subset** is implemented: immutable quantities, the five provenance
-labels, computed-origin propagation, and uncertainty-aware formatting. This is
+The **M0 foundation** is implemented: immutable quantities, the five provenance
+labels, computed-origin propagation, uncertainty-aware formatting, edge units,
+application error types and explicit human/JSON logging sinks. This is
 not yet the simulator, instrument CLI, acquisition pipeline or hardware control.
 
 Static import-direction checks enforce the documented layers, including indirect
@@ -74,8 +75,8 @@ device dependencies from scientific layers. GitHub Actions runs locked tests,
 strict typing, lint, source/test formatting and package builds on Ubuntu with
 Python 3.11 and 3.13 for pushes and pull requests. See
 [software validation](docs/software-validation.md). Explicit config/display conversion helpers are now implemented in
-[units](docs/units.md). Errors/logging helpers remain TODO; checks alone do not
-complete M0.
+[units](docs/units.md). Error/logging setup and its stream ownership contract are
+documented in [errors and logging](docs/errors-logging.md).
 
 ```bash
 uv sync --locked --python 3.11
@@ -96,8 +97,7 @@ print(Quantity(0.4712, 0.0937, "", Provenance.DERIVED))
 ```
 
 See [metrology-primitives.md](docs/metrology-primitives.md) for standard versus
-expanded uncertainty, provenance, and unresolved/unknown warnings. **M0 remains
-partial:** errors/logging helpers are TODO. Unit-edge helpers and static
+expanded uncertainty, provenance, and unresolved/unknown warnings. The M0 leaves are implemented; later instrument milestones remain open. Unit-edge helpers and static
 import-direction checks/CI are implemented; see [units](docs/units.md) and
 [validation](docs/software-validation.md).
 The planned commands below remain unavailable until their later milestones.

@@ -60,6 +60,13 @@ input/output and temperature-domain guards. See [units.md](units.md). Quantity
 units remain labels; numerical uncertainty propagation is not implemented by
 these helpers. **M0 remains partial:** errors/logging are TODO.
 
+**Progress — 23 November 2026:** errors and explicit structured logging leaves
+are implemented; see [errors-logging.md](errors-logging.md). The caller owns the
+human INFO and JSON DEBUG streams; no import-time/global logging setup or run
+storage lifecycle is introduced. All M0 primitives, layering checks and CI are now
+implemented, with 175 tests covering the foundation. This closes the M0 implementation
+scope; M1 onward remain separate, including the simulator and instrument CLI.
+
 ## M1 — Simulator plant and device protocols
 
 **Build:** `devices/interfaces.py` (the `Protocol` definitions), `devices/sim/` with the plant
