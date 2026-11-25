@@ -82,6 +82,11 @@ injectable faults.
 completes in under a second of wall time; every declared fault type can be injected and is
 observable at the device interface.
 
+**Progress — 25 November 2026:** `devices/sim/clock.py` provides a virtual device
+clock with exact integer microsecond timestamps and explicit nonnegative advances.
+It never waits on wall time. The plant model, device protocols, injected faults,
+sample replay, and full simulated sweep remain open.
+
 ## M2 — Acquisition and storage
 
 **Build:** ring buffers, per-channel sequence/dropout accounting, time-window selection,
