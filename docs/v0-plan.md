@@ -87,6 +87,12 @@ clock with exact integer microsecond timestamps and explicit nonnegative advance
 It never waits on wall time. The plant model, device protocols, injected faults,
 sample replay, and full simulated sweep remain open.
 
+**Progress — 26 November 2026:** `devices/sim/fan.py` implements the constant-duty
+part of the fan plant. It computes the affine target above stall and advances
+airspeed with the exact first-order response for the elapsed interval. Slope
+and stall duty are caller-supplied model parameters. Sensor models, noise,
+faults and sweep integration remain open.
+
 ## M2 — Acquisition and storage
 
 **Build:** ring buffers, per-channel sequence/dropout accounting, time-window selection,
